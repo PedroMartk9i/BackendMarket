@@ -1,15 +1,22 @@
+/*
 body {
     margin: 0;
     padding: 0;
     background: linear-gradient(to bottom right, #E3F0FF, #FAFCFF);
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .horizontal {
     display: flex;
     overflow-x: auto;
+    justify-content: space-between;
+    max-width: 80%;
 }
-
+*/
+/*
 .producto {
     max-width: 35%;
     max-height: 100%;
@@ -19,3 +26,50 @@ body {
     justify-content: space-between;
     text-align: center;
 }
+*/
+body {
+    margin: 0;
+    padding: 0;
+    background: url('Imagenes/background.png') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+}
+
+.horizontal {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las tarjetas se envuelvan a la siguiente línea */
+    justify-content: space-between; /* Espacio entre las tarjetas */
+    max-width: 80%; /* Ajusta el ancho máximo para controlar el espacio en pantalla grande */
+}
+
+.producto {
+    width: calc(30% - 20px); /* Ajusta el ancho de cada tarjeta con espacio */
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0px 25px 40px #1687d933;
+    margin-bottom: 20px; /* Espacio entre las tarjetas verticalmente */
+    text-align: center;
+    padding: 20px; /* Espacio dentro de cada tarjeta */
+    box-sizing: border-box; /* Incluye padding en el ancho total */
+}
+
+h1{
+    text-align: center; /* Centra horizontalmente el título */
+    margin-top: 20px; /* Agrega espacio superior para separarlo del contenido debajo */
+    color: #ffffff;
+}
+
+.titulo-container {
+    background-color: rgba(0, 0, 0, 0.7); /* Color de fondo del contenedor */
+    padding: 10px; /* Espacio alrededor del texto */
+    text-align: center; /* Centra el texto horizontalmente */
+}
+
+.titulo-container h1 {
+    color: white; /* Color del texto dentro del contenedor */
+}
+
+

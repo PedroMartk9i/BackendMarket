@@ -14,7 +14,10 @@ session_start();
 
 <body>
 
-    <h1>Productos Disponibles</h1>
+    <div class="titulo-container">
+        <h1>Productos Disponibles</h1>
+    </div>
+
 
     <div class="horizontal">
 
@@ -31,7 +34,7 @@ session_start();
         </div>
         <div class="producto">
             <form action="gestor_carro.php" method="POST">
-                <img src="Imagenes/colgate.png" alt="" height="150px" width="150px">
+                <img src="Imagenes/col_g.jpg" alt="" height="150px" width="150px">
                 <h2>Colgate Triple Accion</h2>
                 <p>Precio: 6000 Pesos</p>
                 <button type="submit" name="Agregar_al_carro"><img src="Imagenes/carrito_compra.png" alt="" height="50px" width="50px"></button>
@@ -77,7 +80,7 @@ session_start();
     </div>
     <form action="carro.php">
         <button type="submit">
-        <h1 >Ir al Carrito</h1>
+        <h2>Ir al Carrito</h2>
     </button>
     <input type="hidden" value="Ir al carro" />
 </form>
