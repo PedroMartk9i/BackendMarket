@@ -103,11 +103,18 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
     //Comprar
     if(isset($_POST['Comprar']))
     {
-        
+        $total = $_SESSION['total'];
+        if ($total == 0){
         echo "<script>
-        
-        window.location.href='pago.php';
+        alert('Su compra es inválida');
+        window.location.href='carro.php';
             </script>";
+        }
+        else{
+            echo "<script>
+            window.location.href='pago.php';
+            </script>";
+        }
     }
     if(isset($_POST['Pago']))
     {
@@ -118,6 +125,15 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
         window.location.href='productos.php';
             </script>";
         session_destroy();
+    }
+    //Regresar
+    if(isset($_POST['Regresar']))
+    {
+        
+        echo "<script>
+        
+        window.location.href='productos.php';
+            </script>";
     }
 
     

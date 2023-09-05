@@ -115,6 +115,12 @@ session_start();//
                 <input type='hidden' value='$total>
                 </form>
             
+            <form action='gestor_carro.php' method='POST'>
+                <button type='submit' class='checkout' name='Regresar'>
+                Regresar
+                </button>
+                <input type='hidden' value='regresa'/>
+                </form>
         </div>
     </div>";
         $_SESSION['total'] = $total;
