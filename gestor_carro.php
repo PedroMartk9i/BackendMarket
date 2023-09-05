@@ -9,8 +9,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
         //verificar que el carro este creado en la sesion
         if(isset($_SESSION['carro']))
         {
-            $misProductos=array_column($_SESSION['carro'],'Nombre');
-            if(in_array($_POST['Nombre'],$misProductos))
+            $misProductos=array_column($_SESSION['carro'],'id');
+            if(in_array($_POST['id'],$misProductos))
             {
                 echo"<script>
                 alert('Producto ya agregado');
@@ -20,7 +20,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
             else
             {
                 $count=count($_SESSION['carro']);
-                $_SESSION['carro'][$count]=array('Nombre'=>$_POST['Nombre'],'Precio'=>$_POST['Precio'],'Imagen'=>$_POST['Imagen'],'Cantidad'=>1);
+                $_SESSION['carro'][$count]=array('id'=>$_POST['id'],'Nombre'=>$_POST['Nombre'],'Precio'=>$_POST['Precio'],'Imagen'=>$_POST['Imagen'],'Cantidad'=>1);
                 echo"<script>
                 alert('Producto agregado');
                 window.location.href='productos.php';
@@ -32,7 +32,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
         else
         {
             //crear el carro
-            $_SESSION['carro'][0]=array('Nombre'=>$_POST['Nombre'],'Precio'=>$_POST['Precio'],'Imagen'=>$_POST['Imagen'],'Cantidad'=>1);
+            $_SESSION['carro'][0]=array('id'=>$_POST['id'],'Nombre'=>$_POST['Nombre'],'Precio'=>$_POST['Precio'],'Imagen'=>$_POST['Imagen'],'Cantidad'=>1);
             echo"<script>
                 alert('Producto agregado');
                 window.location.href='productos.php';
@@ -44,7 +44,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
     {
         foreach($_SESSION['carro'] as $key => $value)
         {
-            if($value['Nombre']==$_POST['Nombre'])
+            if($value['id']==$_POST['id'])
             {
                 unset($_SESSION['carro'][$key]);
                 $_SESSION['carro']=array_values($_SESSION['carro']);
@@ -61,7 +61,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
     {
         foreach($_SESSION['carro'] as $key => $value)
         {
-            if($value['Nombre']==$_POST['Nombre'])
+            if($value['id']==$_POST['id'])
             {
                 $_SESSION['carro'][$key]['Cantidad']= $_SESSION['carro'][$key]['Cantidad']+1;
                 $_SESSION['carro']=array_values($_SESSION['carro']);
@@ -76,7 +76,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
     {
         foreach($_SESSION['carro'] as $key => $value)
         {
-            if($value['Nombre']==$_POST['Nombre'])
+            if($value['id']==$_POST['id'])
             {
                 //Verificar que haya mínimo uno de cada item en el carrito
                 if($_SESSION['carro'][$key]['Cantidad']>1)
@@ -105,7 +105,11 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
         
         echo "<script>
         alert('Compra exitosa');
+        
         window.location.href='productos.php';
             </script>";
     }
+
+    
 }
+
