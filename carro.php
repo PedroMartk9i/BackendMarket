@@ -68,7 +68,7 @@ session_start();//
                 <div>
                 <button class='boton_agr' name='UnoMenos'>-</button>
                 </div>
-                <input type='hidden' name='Nombre' value='$value[Nombre]'>
+                <input type='hidden' name='id' value='$value[id]'>
                 </form>
 
                 <div class='conteo'>$value[Cantidad]</div>
@@ -77,7 +77,7 @@ session_start();//
                 <div>
                 <button class='boton_agr' name='UnoMas'>+</button>
                 </div>
-                <input type='hidden' name='Nombre' value='$value[Nombre]'>
+                <input type='hidden' name='id' value='$value[id]'>
                 </form>
 
                 
@@ -89,7 +89,7 @@ session_start();//
                 <div>
                 <button class='quitar' name='Remover_Producto'>Remover</button>
                 </div>
-                <input type='hidden' name='Nombre' value='$value[Nombre]'>
+                <input type='hidden' name='id' value='$value[id]'>
                 </form>
             </div>
         </div>
